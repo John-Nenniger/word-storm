@@ -1,0 +1,18 @@
+{
+  "name": "wordswordswords",
+  "version": "1.0.0",
+  "description": "A simple site which displays atypical words",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "words"
+  ],
+  "author": "John Nenniger",
+  "license": "ISC",
+  "dependencies": {
+    "ejs": "^2.5.7",
+    "express": "^4.16.2"
+  }
+}
