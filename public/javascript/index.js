@@ -23,9 +23,14 @@
     let word = document.createElement("p");
     word.innerHTML = key;
     word.className += "word";
+    word.className += "hover-near-white:hover";
     word.style.position = "absolute";
-    console.log()
+    word.style.fontSize = `${random(56) + 5}px`
     document.getElementById("body").appendChild(word);
+    // I need to calculate the word's size before I calculate its position,
+    // but after I append it to the Dom... a litle confusing but not too bad
+    let fontSize = window.getComputedStyle(word, null).getPropertyValue('font-size')
+    console.log(fontSize)
     let wordHeight = word.offsetHeight;
     let wordWidth = word.offsetWidth;
     word.style.top = `${random(windowHeight - wordHeight)}px`;
