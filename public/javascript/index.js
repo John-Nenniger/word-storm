@@ -30,9 +30,12 @@
     // I need to calculate the word's size before I calculate its position,
     // but after I append it to the Dom... a litle confusing but not too bad
     let fontSize = window.getComputedStyle(word, null).getPropertyValue('font-size')
-    console.log(fontSize)
     let wordHeight = word.offsetHeight;
     let wordWidth = word.offsetWidth;
     word.style.top = `${random(windowHeight - wordHeight)}px`;
     word.style.right = `${random(windowWidth - wordWidth)}px`;
+    let description = document.createElement("p")
+    description.innerHTML = value
+    document.getElementById("body").appendChild(description)
+
   }
