@@ -11,7 +11,10 @@
                  "Nycotophilia": "love of darkness or night. Finding relaxation or comfort in the darkness",
                  "Agathist": "a person who believes that all things tend towards ultimate good",
                  "Retroherence" :"the tendency of clusters of events to be logically connectable after they’ve happened",
-                 "Nemorian": "an inhabitant of - or pertaining to - forests, woodland, or groves"
+                 "Nemorian": "an inhabitant of - or pertaining to - forests, woodland, or groves",
+                 "Nebulous": "indistinct, vague",
+                 "Staunch": "local and committed in attitude",
+                 "Placate": "to soothe or mollify especially by concessions"
                }
 
   const random = function(max){
@@ -19,7 +22,6 @@
   }
 
   for (const [key, value] of Object.entries(words)){
-    // let hNumber = random(6);
     let word = document.createElement("p");
     word.innerHTML = key;
     word.className += "word";
