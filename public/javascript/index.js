@@ -31,13 +31,17 @@
     document.getElementById("body").appendChild(word);
     // I need to calculate the word's size before I calculate its position,
     // but after I append it to the Dom... a litle confusing but not too bad
-    let fontSize = window.getComputedStyle(word, null).getPropertyValue('font-size')
+    let readFontSize = window.getComputedStyle(word, null).getPropertyValue('font-size')
     let wordHeight = word.offsetHeight;
     let wordWidth = word.offsetWidth;
     word.style.top = `${random(windowHeight - wordHeight)}px`;
     word.style.right = `${random(windowWidth - wordWidth)}px`;
+    // create description
     let description = document.createElement("p")
     description.innerHTML = value
+    description.className += "description";
+    //let wordFontValue = word.style.fontSize.slice(0, word.style.fontSize.length-2)
+    description.style.fontSize = `${parseInt(word.style.fontSize, 10) * 0.8}px`
     document.getElementById("body").appendChild(description)
-
+    // put description in the approprite position
   }
