@@ -5,24 +5,38 @@ html {
 
 .word{
   animation-duration: 2s;
-    animation-name: fadein;
+  animation-name: fadein;
 }
 
 @keyframes fadein {
   from{
     opacity: 0
-
   }
   to {
     opacity: 1
-
   }
 }
 
 .visibleDescription{
-  visibility: visible;
+  animation-duration: 2s;
+  animation-name: fadein;
 }
 
 .hiddenDescription{
   visibility: hidden;
+}
+
+.hiddenWord{
+  animation-duration: 2s;
+  animation-name: fadeout;
+}
+
+@keyframes fadeout{
+  from{
+    /* visibility: visible; */
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
 }
