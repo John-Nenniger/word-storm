@@ -25,7 +25,7 @@
     let word = document.createElement("p");
     word.innerHTML = key;
     word.className += "word";
-    word.className += "hover-near-white:hover";
+    word.className += " hover-near-white:hover";
     word.style.position = "absolute";
     word.style.fontSize = `${random(56) + 5}px`
     document.getElementById("body").appendChild(word);
@@ -47,6 +47,6 @@
     // put description in the approprite position
     // I need to factor in the size of the word though
     console.log(word.style.top)
-    description.style.top = `${parseInt(word.style.top, 10) + 20}px`
+    description.style.top = `${parseInt(word.style.top, 10) + word.offsetHeight + 10}px`
     description.style.right = `${parseInt(word.style.right, 10)}px`
   }
