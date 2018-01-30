@@ -4,18 +4,18 @@
   const windowWidth = window.innerWidth;
   const words = {"Ethereal": "extremely delicate and light in a way that seems too perfect for this world",
                  "Lugubrious": "looking or sounding sad and dismal",
-                 "Pernicious": "having a harmful effect, especially in a gradual or subtle way"}
-                 // "Litigious": "unreasonably prone to go to law to settle disputes",
-                 // "Nefarious": "(typically of an action or activity) wicked or criminal",
-                 // "Decathect": "to withdraw one’s feelings of attachment from (a person, idea, or object), as in anticipation of a future loss",
-                 // "Nycotophilia": "love of darkness or night. Finding relaxation or comfort in the darkness",
-                 // "Agathist": "a person who believes that all things tend towards ultimate good",
-                 // "Retroherence" :"the tendency of clusters of events to be logically connectable after they’ve happened",
-                 // "Nemorian": "an inhabitant of - or pertaining to - forests, woodland, or groves",
-                 // "Nebulous": "indistinct, vague",
-                 // "Staunch": "local and committed in attitude",
-                 // "Placate": "to soothe or mollify especially by concessions"
-               // }
+                 "Pernicious": "having a harmful effect, especially in a gradual or subtle way",
+                 "Litigious": "unreasonably prone to go to law to settle disputes",
+                 "Nefarious": "(typically of an action or activity) wicked or criminal",
+                 "Decathect": "to withdraw one’s feelings of attachment from (a person, idea, or object), as in anticipation of a future loss",
+                 "Nycotophilia": "love of darkness or night. Finding relaxation or comfort in the darkness",
+                 "Agathist": "a person who believes that all things tend towards ultimate good",
+                 "Retroherence" :"the tendency of clusters of events to be logically connectable after they’ve happened",
+                 "Nemorian": "an inhabitant of - or pertaining to - forests, woodland, or groves",
+                 "Nebulous": "indistinct, vague",
+                 "Staunch": "local and committed in attitude",
+                 "Placate": "to soothe or mollify especially by concessions"
+               }
 
   const random = function(max){
     return Math.floor((Math.random() * max) + 1)
@@ -46,7 +46,14 @@
     document.getElementById("body").appendChild(description)
     // put description in the approprite position
     // I need to factor in the size of the word though
-    console.log(word.style.top)
     description.style.top = `${parseInt(word.style.top, 10) + word.offsetHeight + 10}px`
     description.style.right = `${parseInt(word.style.right, 10)}px`
+    description.style.visibility = "hidden"
+    // add event listener to word to reveal the description when clicked
+    word.addEventListener('click', () => {
+      if (description.style.visibility === "hidden"){
+        description.style.visibility = ""
+      } else {description.style.visibility = "hidden"}
+    })
+
   }
