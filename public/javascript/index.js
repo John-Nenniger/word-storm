@@ -55,6 +55,9 @@
       if (document.getElementsByClassName("visibleDescription").length === 0){
         description.classList.add("visibleDescription")
         description.classList.remove("hiddenDescription")
+      } else if (description.classList.contains("visibleDescription")){
+        description.classList.add("hiddenDescription")
+        description.classList.remove("visibleDescription")
       } else {
         let previouslyVisibleDescription = document.getElementsByClassName("visibleDescription")[0]
         previouslyVisibleDescription.classList.remove("visibleDescription");
