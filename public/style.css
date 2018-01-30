@@ -29,11 +29,11 @@ html {
 .hiddenWord{
   animation-duration: 2s;
   animation-name: fadeout;
+  animation-fill-mode: forwards;
 }
 
 @keyframes fadeout{
   from{
-    /* visibility: visible; */
     opacity: 1;
   }
   to {
