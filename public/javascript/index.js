@@ -48,12 +48,20 @@
     // I need to factor in the size of the word though
     description.style.top = `${parseInt(word.style.top, 10) + word.offsetHeight + 10}px`
     description.style.right = `${parseInt(word.style.right, 10)}px`
-    description.style.visibility = "hidden"
+    description.classList.add("hiddenDescription")
     // add event listener to word to reveal the description when clicked
+    // and hide other
     word.addEventListener('click', () => {
-      if (description.style.visibility === "hidden"){
-        description.style.visibility = ""
-      } else {description.style.visibility = "hidden"}
-    })
+      if (document.getElementsByClassName("visibleDescription").length === 0){
+        description.classList.add("visibleDescription")
+        description.classList.remove("hiddenDescription")
+      } else {
+        let previouslyVisibleDescription = document.getElementsByClassName("visibleDescription")[0]
+        previouslyVisibleDescription.classList.remove("visibleDescription");
+        previouslyVisibleDescription.classList.add("hiddenDescription")
+        description.classList.add("visibleDescription")
+        description.classList.remove("hiddenDescription")
+      }
+     })
 
   }
