@@ -15,7 +15,7 @@
                  "Nebulous": "indistinct, vague",
                  "Staunch": "local and committed in attitude",
                  "Placate": "to soothe or mollify especially by concessions",
-                 "Obfuscate": "to make obscure or unclear:to obfuscate a problem with extraneous information",
+                 "Obfuscate": "to make obscure or unclear",
                  "Fastidious": "excessively particular, critical, or demanding; hard to please",
                  "Sonder": "The realization that each passerby has a life as vivid and complex as your own",
                  "Occhiolism": "awareness of the smallness of your perspective",
@@ -57,7 +57,7 @@
     description.classList.add("hiddenDescription")
     // add event listener to word to reveal the description when clicked
     // and hide other
-    word.addEventListener('click', () => {
+    word.addEventListener('click', (e) => {
       if (document.getElementsByClassName("hiddenWord").length === 0) { // This is the first time a word has been clicked
         // reveal the description accosiated with the word in question
         handleWordClick(description);
@@ -75,22 +75,35 @@
             wordToHide.classList.remove("hiddenWord")
           })
         }
+      //  console.log(e.currentTarget)
      })
 
   }
 
   function handleWordClick(descrip){
+    // let anyVisibleDescriptions = !document.getElementsByClassName("visibleDescription").length === 0
+    // let anyHiddenWords = !document.getElementsByClassName("hiddenWord").length === 0
+    // console.log(anyHiddenWords)
     if (document.getElementsByClassName("visibleDescription").length === 0){
-      descrip.classList.add("visibleDescription")
-      descrip.classList.remove("hiddenDescription")
+      showDescription(descrip)
     } else if (descrip.classList.contains("visibleDescription")){
-      descrip.classList.add("hiddenDescription")
-      descrip.classList.remove("visibleDescription")
+      hideDescription(descrip)
+    } else if (document.getElementsByClassName("hiddenWord").length > 0){
+      hideDescription(document.getElementsByClassName("visibleDescription")[0])
     } else {
       let previouslyVisibleDescription = document.getElementsByClassName("visibleDescription")[0]
       previouslyVisibleDescription.classList.remove("visibleDescription");
       previouslyVisibleDescription.classList.add("hiddenDescription")
-      descrip.classList.add("visibleDescription")
-      descrip.classList.remove("hiddenDescription")
+      showDescription(descrip)
     }
+  }
+
+  function showDescription(description){
+    description.classList.add("visibleDescription")
+    description.classList.remove("hiddenDescription")
+  }
+
+  function hideDescription(description){
+    description.classList.add("hiddenDescription")
+    description.classList.remove("visibleDescription")
   }
