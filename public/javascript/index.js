@@ -5,23 +5,23 @@
   const words = {"Ethereal": "extremely delicate and light in a way that seems too perfect for this world",
                  "Lugubrious": "looking or sounding sad and dismal",
                  "Pernicious": "having a harmful effect, especially in a gradual or subtle way",
-                 "Litigious": "unreasonably prone to go to law to settle disputes"}
-               //   "Nefarious": "(typically of an action or activity) wicked or criminal",
-               //   "Decathect": "to withdraw one’s feelings of attachment from (a person, idea, or object), as in anticipation of a future loss",
-               //   "Nycotophilia": "love of darkness or night. Finding relaxation or comfort in the darkness",
-               //   "Agathist": "a person who believes that all things tend towards ultimate good",
-               //   "Retroherence" :"the tendency of clusters of events to be logically connectable after they’ve happened",
-               //   "Nemorian": "an inhabitant of - or pertaining to - forests, woodland, or groves",
-               //   "Nebulous": "indistinct, vague",
-               //   "Staunch": "local and committed in attitude",
-               //   "Placate": "to soothe or mollify especially by concessions",
-               //   "Obfuscate": "to make obscure or unclear:to obfuscate a problem with extraneous information",
-               //   "Fastidious": "excessively particular, critical, or demanding; hard to please",
-               //   "Sonder": "The realization that each passerby has a life as vivid and complex as your own",
-               //   "Occhiolism": "awareness of the smallness of your perspective",
-               //   "Rubatosis": "The unsettling awareness of your own heartbeat",
-               //   "Exulansis": "The tendency to give up trying to talk about an experience because people are unable to relate to it"
-               // }
+                 "Litigious": "unreasonably prone to go to law to settle disputes",
+                 "Nefarious": "(typically of an action or activity) wicked or criminal",
+                 "Decathect": "to withdraw one’s feelings of attachment from (a person, idea, or object), as in anticipation of a future loss",
+                 "Nycotophilia": "love of darkness or night. Finding relaxation or comfort in the darkness",
+                 "Agathist": "a person who believes that all things tend towards ultimate good",
+                 "Retroherence" :"the tendency of clusters of events to be logically connectable after they’ve happened",
+                 "Nemorian": "an inhabitant of - or pertaining to - forests, woodland, or groves",
+                 "Nebulous": "indistinct, vague",
+                 "Staunch": "local and committed in attitude",
+                 "Placate": "to soothe or mollify especially by concessions",
+                 "Obfuscate": "to make obscure or unclear:to obfuscate a problem with extraneous information",
+                 "Fastidious": "excessively particular, critical, or demanding; hard to please",
+                 "Sonder": "The realization that each passerby has a life as vivid and complex as your own",
+                 "Occhiolism": "awareness of the smallness of your perspective",
+                 "Rubatosis": "The unsettling awareness of your own heartbeat",
+                 "Exulansis": "The tendency to give up trying to talk about an experience because people are unable to relate to it"
+               }
 
   const random = function(max){
     return Math.floor((Math.random() * max) + 1)
@@ -58,23 +58,29 @@
     // add event listener to word to reveal the description when clicked
     // and hide other
     word.addEventListener('click', () => {
-      if (document.getElementsByClassName("visibleDescription").length === 0){
-        description.classList.add("visibleDescription")
-        description.classList.remove("hiddenDescription")
-      } else if (description.classList.contains("visibleDescription")){
-        description.classList.add("hiddenDescription")
-        description.classList.remove("visibleDescription")
-      } else {
-        let previouslyVisibleDescription = document.getElementsByClassName("visibleDescription")[0]
-        previouslyVisibleDescription.classList.remove("visibleDescription");
-        previouslyVisibleDescription.classList.add("hiddenDescription")
-        description.classList.add("visibleDescription")
-        description.classList.remove("hiddenDescription")
-      }
+      handleWordClick(description)
       // give all other words .hiddenword
       Array.from(document.getElementsByClassName("word")).forEach(function(wordToHide){
+        if (wordToHide !== word){
         wordToHide.classList.add("hiddenWord")
+        }
       })
      })
 
+  }
+
+  function handleWordClick(descrip){
+    if (document.getElementsByClassName("visibleDescription").length === 0){
+      descrip.classList.add("visibleDescription")
+      descrip.classList.remove("hiddenDescription")
+    } else if (descrip.classList.contains("visibleDescription")){
+      descrip.classList.add("hiddenDescription")
+      descrip.classList.remove("visibleDescription")
+    } else {
+      let previouslyVisibleDescription = document.getElementsByClassName("visibleDescription")[0]
+      previouslyVisibleDescription.classList.remove("visibleDescription");
+      previouslyVisibleDescription.classList.add("hiddenDescription")
+      descrip.classList.add("visibleDescription")
+      descrip.classList.remove("hiddenDescription")
+    }
   }
