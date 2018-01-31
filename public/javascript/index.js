@@ -58,13 +58,23 @@
     // add event listener to word to reveal the description when clicked
     // and hide other
     word.addEventListener('click', () => {
-      handleWordClick(description)
-      // give all other words .hiddenword
-      Array.from(document.getElementsByClassName("word")).forEach(function(wordToHide){
-        if (wordToHide !== word){
-        wordToHide.classList.add("hiddenWord")
+      if (document.getElementsByClassName("hiddenWord").length === 0) { // This is the first time a word has been clicked
+        // reveal the description accosiated with the word in question
+        handleWordClick(description);
+        // and give all other words .hiddenword
+        Array.from(document.getElementsByClassName("word")).forEach(function(wordToHide){
+          if (wordToHide !== word){
+            wordToHide.classList.add("hiddenWord")
+          }
+        })
+      } else { // if other words are hidden already
+        // hide the description again
+        handleWordClick(description);
+        // and reveal all the other words
+        Array.from(document.getElementsByClassName("word")).forEach(function(wordToHide){
+            wordToHide.classList.remove("hiddenWord")
+          })
         }
-      })
      })
 
   }
