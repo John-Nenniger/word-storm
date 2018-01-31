@@ -1,26 +1,36 @@
 
-  console.log("stuffs loaded ")
+  console.log("javascript is happening")
   const windowHeight = window.innerHeight;
   const windowWidth = window.innerWidth;
-  const words = {"Ethereal": "extremely delicate and light in a way that seems too perfect for this world",
-                 "Lugubrious": "looking or sounding sad and dismal",
-                 "Pernicious": "having a harmful effect, especially in a gradual or subtle way",
-                 "Litigious": "unreasonably prone to go to law to settle disputes",
-                 "Nefarious": "(typically of an action or activity) wicked or criminal",
-                 "Decathect": "to withdraw one’s feelings of attachment from (a person, idea, or object), as in anticipation of a future loss",
-                 "Nycotophilia": "love of darkness or night. Finding relaxation or comfort in the darkness",
-                 "Agathist": "a person who believes that all things tend towards ultimate good",
-                 "Retroherence" :"the tendency of clusters of events to be logically connectable after they’ve happened",
-                 "Nemorian": "an inhabitant of - or pertaining to - forests, woodland, or groves",
-                 "Nebulous": "indistinct, vague",
-                 "Staunch": "local and committed in attitude",
-                 "Placate": "to soothe or mollify especially by concessions",
-                 "Obfuscate": "to make obscure or unclear",
-                 "Fastidious": "excessively particular, critical, or demanding; hard to please",
-                 "Sonder": "The realization that each passerby has a life as vivid and complex as your own",
-                 "Occhiolism": "awareness of the smallness of your perspective",
-                 "Rubatosis": "The unsettling awareness of your own heartbeat",
-                 "Exulansis": "The tendency to give up trying to talk about an experience because people are unable to relate to it"
+  const words = {"Ethereal": "extremely delicate and light in a way that seems too perfect for this world.",
+                 "Lugubrious": "looking or sounding sad and dismal.",
+                 "Pernicious": "having a harmful effect, especially in a gradual or subtle way.",
+                 "Litigious": "unreasonably prone to go to law to settle disputes.",
+                 "Nefarious": "(typically of an action or activity) wicked or criminal.",
+                 "Decathect": "to withdraw one’s feelings of attachment from (a person, idea, or object), as in anticipation of a future loss.",
+                 "Nycotophilia": "love of darkness or night. Finding relaxation or comfort in the darkness.",
+                 "Agathist": "a person who believes that all things tend towards ultimate good.",
+                 "Retroherence" :"the tendency of clusters of events to be logically connectable after they’ve happened.",
+                 "Nemorian": "an inhabitant of - or pertaining to - forests, woodland, or groves.",
+                 "Nebulous": "indistinct, vague.",
+                 "Staunch": "local and committed in attitude.",
+                 "Placate": "to soothe or mollify especially by concessions.",
+                 "Obfuscate": "to make obscure or unclear.",
+                 "Fastidious": "excessively particular, critical, or demanding; hard to please.",
+                 "Sonder": "The realization that each passerby has a life as vivid and complex as your own.",
+                 "Occhiolism": "awareness of the smallness of your perspective.",
+                 "Rubatosis": "The unsettling awareness of your own heartbeat.",
+                 "Exulansis": "The tendency to give up trying to talk about an experience because people are unable to relate to it.",
+                 "Habile": "deft or skillful.",
+                 "Logomachy": "an argument about words.",
+                 "Oneirataxia": "inability to distinguish dreams or fantasy with real life.",
+                 "Jouska": "A hypothetical conversation that you compulsively play out in your head.",
+                 "Liberosis": "desire to care less about things.",
+                 "Vemödalen": "frustration of photographing something amazing when thousands of identical photos already exist.",
+                 "Enervate": "to cause (someone) to feel drained of energy or vitality.",
+                 "Nonplussed": "(of a person) surprised and confused so much that they are unsure how to react.",
+                 "Elysian": "anything which connotes beauty, perfection, celestial divinity, bliss, or paradise.",
+                 "Ennui": "a feeling of listlessness and dissatisfaction arising from a lack of occupation or excitement."
                }
 
   const random = function(max){
@@ -31,10 +41,9 @@
     let word = document.createElement("p");
     word.innerHTML = key;
     word.classList.add("word");
-    word.classList.add("glow");
-
+    word.classList.add("dim");
     word.style.position = "absolute";
-    word.style.fontSize = `${random(56) + 5}px`
+    word.style.fontSize = `${(random(120)*windowWidth)/1000}px`
     document.getElementById("body").appendChild(word);
     // I need to calculate the word's size before I calculate its position,
     // but after I append it to the Dom... a litle confusing but not too bad

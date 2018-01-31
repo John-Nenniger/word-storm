@@ -3,8 +3,9 @@ html {
 }
 
 body {
-  animation: colorchange 100s;
-  -webkit-animation: colorchange 100s;
+  animation: colorchange 60s;
+  -webkit-animation: colorchange 60s;
+  animation-iteration-count: infinite;
 }
 
 @keyframes colorchange
