@@ -1,6 +1,28 @@
 html {
-  background-color: #FBF1A9;
   overflow: scroll;
+}
+
+body {
+  animation: colorchange 100s;
+  -webkit-animation: colorchange 100s;
+}
+
+@keyframes colorchange
+{
+  0% {background: lavender;}
+  25% {background: lightblue;}
+  50% {background: lightsteelblue;}
+  75% {background: lightslategray;}
+  100% {background: aliceblue;}
+}
+
+@-webkit-keyframes colorchange
+{
+  0% {background: lavender;}
+  25% {background: lightblue;}
+  50% {background: lightsteelblue;}
+  75% {background: lightslategray;}
+  100% {background: aliceblue;}
 }
 
 .word{
@@ -39,4 +61,28 @@ html {
   to {
     opacity: 0;
   }
+}
+
+/* using some tachyons bits */
+
+.dim {
+  opacity: 1;
+  transition: opacity .15s ease-in;
+}
+.dim:hover,
+.dim:focus {
+  opacity: .5;
+  transition: opacity .15s ease-in;
+}
+.dim:active {
+  opacity: .8; transition: opacity .15s ease-out;
+}
+
+.glow {
+  transition: opacity .15s ease-in;
+}
+.glow:hover,
+.glow:focus {
+  opacity: 1;
+  transition: opacity .15s ease-in;
 }

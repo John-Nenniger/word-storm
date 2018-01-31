@@ -30,8 +30,9 @@
   for (const [key, value] of Object.entries(words)){
     let word = document.createElement("p");
     word.innerHTML = key;
-    word.className += "word";
-    word.className += " hover-near-white:hover";
+    word.classList.add("word");
+    word.classList.add("glow");
+
     word.style.position = "absolute";
     word.style.fontSize = `${random(56) + 5}px`
     document.getElementById("body").appendChild(word);
@@ -81,9 +82,6 @@
   }
 
   function handleWordClick(descrip){
-    // let anyVisibleDescriptions = !document.getElementsByClassName("visibleDescription").length === 0
-    // let anyHiddenWords = !document.getElementsByClassName("hiddenWord").length === 0
-    // console.log(anyHiddenWords)
     if (document.getElementsByClassName("visibleDescription").length === 0){
       showDescription(descrip)
     } else if (descrip.classList.contains("visibleDescription")){
