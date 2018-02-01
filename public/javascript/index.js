@@ -74,7 +74,8 @@
                  "Cantankerous": "bad-tempered, argumentative, and uncooperative.",
                  "Sanguine": "consisting of or relating to blood",
                  "Sagacious": "having or showing keen mental discernment and good judgment; shrewd.",
-                 "Acute": "present or experienced to a severe or intense degree. (or a person) having or showing a perceptive understanding or insight."
+                 "Acute": "present or experienced to a severe or intense degree. (or a person) having or showing a perceptive understanding or insight.",
+                 "Aberration": "a departure from what is normal, usual, or expected, typically one that is unwelcome."
                }
 
   const random = function(max){
