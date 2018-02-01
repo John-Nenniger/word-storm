@@ -94,7 +94,8 @@
     let readFontSize = window.getComputedStyle(word, null).getPropertyValue('font-size')
     let wordHeight = word.offsetHeight;
     let wordWidth = word.offsetWidth;
-    word.style.top = `${random(windowHeight - wordHeight)}px`;
+    word.style.top = `${random(windowHeight - (wordHeight + (windowHeight*0.08)))}px`;
+    console.log(` windowH: ${windowHeight} wordH: ${wordHeight} top: ${word.style.top}`)
     word.style.right = `${random(windowWidth - wordWidth)}px`;
     // create description
     let description = document.createElement("p")
