@@ -1,5 +1,5 @@
 
-  console.log("javascript is happening")
+  console.log("hold onto your butts, javascript is happening")
   const windowHeight = window.innerHeight;
   const windowWidth = window.innerWidth;
   const words = {"Ethereal": "extremely delicate and light in a way that seems too perfect for this world.",
@@ -81,6 +81,16 @@
     return Math.floor((Math.random() * max) + 1)
   }
 
+  function showDescription(description){
+    description.classList.add("visibleDescription")
+    description.classList.remove("hiddenDescription")
+  }
+
+  function hideDescription(description){
+    description.classList.add("hiddenDescription")
+    description.classList.remove("visibleDescription")
+  }
+
   for (const [key, value] of Object.entries(words)){
     let word = document.createElement("p");
     word.innerHTML = key;
@@ -130,7 +140,6 @@
             wordToHide.classList.remove("hiddenWord")
           })
         }
-      //  console.log(e.currentTarget)
      })
 
   }
@@ -148,14 +157,4 @@
       previouslyVisibleDescription.classList.add("hiddenDescription")
       showDescription(descrip)
     }
-  }
-
-  function showDescription(description){
-    description.classList.add("visibleDescription")
-    description.classList.remove("hiddenDescription")
-  }
-
-  function hideDescription(description){
-    description.classList.add("hiddenDescription")
-    description.classList.remove("visibleDescription")
   }
