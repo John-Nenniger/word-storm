@@ -2,7 +2,7 @@
   console.log("hold onto your butts, javascript is happening")
   const windowHeight = window.innerHeight;
   const windowWidth = window.innerWidth;
-  const words = {"Ethereal": "extremely delicate and light in a way that seems too perfect for this world.",
+  const allWords = {"Ethereal": "extremely delicate and light in a way that seems too perfect for this world.",
                  "Lugubrious": "looking or sounding sad and dismal.",
                  "Pernicious": "having a harmful effect, especially in a gradual or subtle way.",
                  "Litigious": "unreasonably prone to go to law to settle disputes.",
@@ -77,8 +77,11 @@
                  "Acute": "present or experienced to a severe or intense degree. (or a person) having or showing a perceptive understanding or insight.",
                  "Aberration": "a departure from what is normal, usual, or expected, typically one that is unwelcome."
                }
+   // Object.entries()turns allWords into an array
+   // Then I sort that array randomly, and take the first 20 word:description pairs
+  const random20Words = Object.entries(allWords).sort(() => 0.5 - Math.random()).slice(0,20)
 
-  const random = function(max){
+  function random(max){
     return Math.floor((Math.random() * max) + 1)
   }
 
@@ -92,8 +95,8 @@
     description.classList.remove("visibleDescription")
   }
 
-  for (const [key, value] of Object.entries(words)){
-    let word = document.createElement("p");
+  for (const [key, value] of random20Words){
+    const word = document.createElement("p");
     word.innerHTML = key;
     word.classList.add("word");
     word.classList.add("dim");
@@ -102,24 +105,27 @@
     document.getElementById("body").appendChild(word);
     // I need to calculate the word's size before I calculate its position,
     // but after I append it to the Dom... a litle confusing but not too bad
-    let readFontSize = window.getComputedStyle(word, null).getPropertyValue('font-size')
-    let wordHeight = word.offsetHeight;
-    let wordWidth = word.offsetWidth;
-    word.style.top = `${random(windowHeight - (wordHeight + (windowHeight*0.08)))}px`;
-    console.log(` windowH: ${windowHeight} wordH: ${wordHeight} top: ${word.style.top}`)
+    const readFontSize = window.getComputedStyle(word, null).getPropertyValue('font-size')
+    const wordHeight = word.offsetHeight;
+    const wordWidth = word.offsetWidth;
+    word.style.top = `${random(windowHeight - (wordHeight + (windowHeight*0.10)))}px`;
     word.style.right = `${random(windowWidth - wordWidth)}px`;
     // create description
-    let description = document.createElement("p")
+    const description = document.createElement("p")
+    // add the text into the tag
     description.innerHTML = value
-    description.className += "description";
-    // change description size
+    description.classList.add("description");
+    // change description size based on the word's font-size
     description.style.fontSize = `${parseInt(word.style.fontSize, 10) * 0.8}px`
     description.style.position = "absolute"
     document.getElementById("body").appendChild(description)
     // put description in the approprite position
     // I need to factor in the size of the word though
     description.style.top = `${parseInt(word.style.top, 10) + word.offsetHeight + 10}px`
-    description.style.right = `${parseInt(word.style.right, 10)}px`
+    description.style.textAlign = "center"
+    // i need the width of the description so that I don't position it off the page
+    const descriptionWidth = description.offsetWidth
+    description.style.right = `${parseInt(word.style.right - (descriptionWidth/2), 10)}px`
     description.classList.add("hiddenDescription")
     // add event listener to word to reveal the description when clicked
     // and hide other

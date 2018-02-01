@@ -10,18 +10,18 @@ body {
 
 @keyframes colorchange
 {
-  0% {background: lavender;}
-  25% {background: lightblue;}
-  50% {background: lightsteelblue;}
+  0% {background: lightblue;}
+  25% {background: lightsteelblue;}
+  50% {background: slategray;}
   75% {background: lightslategray;}
   100% {background: aliceblue;}
 }
 
 @-webkit-keyframes colorchange
 {
-  0% {background: lavender;}
-  25% {background: lightblue;}
-  50% {background: lightsteelblue;}
+  0% {background: lightblue;}
+  25% {background: lightsteelblue;}
+  50% {background: slategray;}
   75% {background: lightslategray;}
   100% {background: aliceblue;}
 }
