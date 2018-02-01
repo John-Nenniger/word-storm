@@ -101,7 +101,7 @@
     word.classList.add("word");
     word.classList.add("dim");
     word.style.position = "absolute";
-    word.style.fontSize = `${((random(120)*windowWidth)/1500) + 4}px`
+    word.style.fontSize = `${((random(120)*windowWidth)/1500) + 8}px`
     document.getElementById("body").appendChild(word);
     // I need to calculate the word's size before I calculate its position,
     // but after I append it to the Dom... a litle confusing but not too bad

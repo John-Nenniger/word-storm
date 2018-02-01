@@ -1,29 +1,32 @@
 html {
   overflow: scroll;
+  font-family: system-ui;
 }
 
 body {
-  animation: colorchange 60s;
-  -webkit-animation: colorchange 60s;
+  animation: colorchange 30s;
+  -webkit-animation: colorchange 30s;
   animation-iteration-count: infinite;
 }
 
 @keyframes colorchange
 {
   0% {background: lightblue;}
-  25% {background: lightsteelblue;}
-  50% {background: slategray;}
-  75% {background: lightslategray;}
-  100% {background: aliceblue;}
+  20% {background: lightsteelblue;}
+  40% {background: slategray;}
+  60% {background: lightslategray;}
+  80% {background: lightcyan;}
+  100% {background: lightblue;}
 }
 
 @-webkit-keyframes colorchange
 {
   0% {background: lightblue;}
-  25% {background: lightsteelblue;}
-  50% {background: slategray;}
-  75% {background: lightslategray;}
-  100% {background: aliceblue;}
+  20% {background: lightsteelblue;}
+  40% {background: slategray;}
+  60% {background: lightslategray;}
+  80% {background: lightcyan;}
+  100% {background: lightblue;}
 }
 
 .word{
