@@ -32,6 +32,12 @@ body {
 .word{
   animation-duration: 2s;
   animation-name: fadein;
+  transition: color 1s;
+}
+
+.word:hover, .visibleDescription:hover{
+  color: mintcream;
+
 }
 
 @keyframes fadein {
@@ -46,6 +52,7 @@ body {
 .visibleDescription{
   animation-duration: 2s;
   animation-name: fadein;
+  transition: color 1s;
 }
 
 .hiddenDescription{
@@ -80,13 +87,4 @@ body {
 }
 .dim:active {
   opacity: .8; transition: opacity .15s ease-out;
-}
-
-.glow {
-  transition: opacity .15s ease-in;
-}
-.glow:hover,
-.glow:focus {
-  opacity: 1;
-  transition: opacity .15s ease-in;
 }

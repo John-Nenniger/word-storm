@@ -70,7 +70,7 @@
                  "Vehement": "showing strong feeling; forceful, passionate, or intense.",
                  "Miasma": "an oppressive or unpleasant atmosphere or smell that surrounds or emanates from something.",
                  "Stasis": "A state of inactivity; a freezing, or state of motionlessness.",
-                 "Melodious": "of, producingm or having a pleasant tune.",
+                 "Melodious": "of, producing, or having a pleasant tune.",
                  "Cantankerous": "bad-tempered, argumentative, and uncooperative.",
                  "Sanguine": "consisting of or relating to blood.",
                  "Sagacious": "having or showing keen mental discernment and good judgment; shrewd.",
@@ -99,9 +99,8 @@
     const word = document.createElement("p");
     word.innerHTML = key;
     word.classList.add("word");
-    word.classList.add("dim");
     word.style.position = "absolute";
-    word.style.fontSize = `${((random(120)*windowWidth)/1500) + 8}px`
+    word.style.fontSize = `${((random(120)*windowWidth)/1600) + 10}px`
     document.getElementById("body").appendChild(word);
     // I need to calculate the word's size before I calculate its position,
     // but after I append it to the Dom... a litle confusing but not too bad
@@ -150,7 +149,7 @@
      })
 
   }
-
+  // this function handle the hiding and revealing of descriptions
   function handleWordClick(descrip){
     if (document.getElementsByClassName("visibleDescription").length === 0){
       showDescription(descrip)
