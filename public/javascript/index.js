@@ -45,7 +45,7 @@
                  "Illusory": "based on illusion; not real.",
                  "Ephemeral": "lasting for a very short time.",
                  "Esoteric": "intended for or likely to be understood by only a small number of people with a specialized knowledge or interest.",
-                 "Eternal": "asting or existing forever; without end or beginning.",
+                 "Eternal": "lasting or existing forever; without end or beginning.",
                  "Bashful": "reluctant to draw attention to oneself; shy.",
                  "Cacophany": "a harsh, discordant mixture of sounds.",
                  "Hale": "(of a person, especially an elderly one) strong and healthy.",
