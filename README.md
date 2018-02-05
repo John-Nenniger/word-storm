@@ -1,5 +1,5 @@
 # word-storm.com
-A simple site for atypical words: http://word-storm.herokuapp.com
+A simple site for atypical words: word-storm.com
 
 This was a quick personal project I created in order to practice some Frontend Skills.
 
