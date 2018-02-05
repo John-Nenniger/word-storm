@@ -16,7 +16,7 @@ To get this up and running on your local machine:
 
 - Clone this repository (fork it first if you'd like)
 
-- Navigate into the created repo (cd word-storm.com)
+- Navigate into the created repo (cd word-storm)
 
 - npm install
 
